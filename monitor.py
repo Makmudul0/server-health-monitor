@@ -1,16 +1,20 @@
 import psutil
 import smtplib
 from email.mime.text import MIMEText
-import datetime
+
+
+
 
 # Thresholds
 CPU_THRESHOLD = 80  # 80% CPU usage
 MEMORY_THRESHOLD = 80  # 80% Memory usage
 DISK_THRESHOLD = 80  # 80% Disk usage
 
-# Email settings
-EMAIL_ADDRESS = ""
-EMAIL_PASSWORD = ""
+import datetimeimport os
+from dotenv import load_dotenv
+load_dotenv()  # Loads .env file
+EMAIL_ADDRESS = os.getenv("GMAIL_USER")
+EMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")
 TO_EMAIL = "makmudulweb@gmail.com"
 
 
